@@ -1,9 +1,13 @@
+import { ProjectItem } from "../ProjectItem";
 import { ProjectsContainer } from "./styles";
 
 export function Projects() {
   return (
     <ProjectsContainer>
-      <p>Projetos</p>
+      <ProjectItem />
+      <ProjectItem />
+      <ProjectItem />
+      <ProjectItem />
     </ProjectsContainer>
   );
 }

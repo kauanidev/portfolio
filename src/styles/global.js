@@ -22,10 +22,14 @@ body {
   background: ${(props) => props.theme.bg};
   color: ${(props) => props.theme.text};
 }
+
+ul {
+  list-style: none;
+}
 `;
 
 export const BaseContainer = styled.main`
   width: 100%;
-  max-width: 760px;
+  max-width: 47.5rem;
   margin: 0 auto;
 `;
