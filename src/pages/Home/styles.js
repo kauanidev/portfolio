@@ -10,8 +10,9 @@ export const HomeContainer = styled(BaseContainer)`
     margin: 3.125rem auto;
     line-height: 150%;
 
-    span {
+    b {
       color: ${(props) => props.theme.secondary};
+      font-weight: 500;
     }
   }
 `;

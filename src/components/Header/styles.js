@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
     height: 13.4375rem;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid ${(props) => props.theme.secondary};
+    border: 0.3125rem solid ${(props) => props.theme.secondary};
   }
 `;
 
@@ -36,6 +36,11 @@ export const SocialsContainer = styled.div`
 
   a {
     transition: 0.4s;
+
+    svg {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
   }
 
   a:hover {

@@ -16,7 +16,8 @@ export const SkillItem = styled.div`
   transition: 0.4s;
 
   svg {
-    font-size: 4.375rem;
+    width: 4.375rem;
+    height: 4.375rem;
   }
 
   p {

@@ -1,33 +1,17 @@
 import { SkillItem, SkillsContainer } from "./styles";
 import { SiJavascript } from "react-icons/si";
 
-export function Skills() {
+export function Skills({ skills }) {
   return (
     <SkillsContainer>
-      <SkillItem>
-        <SiJavascript />
-        <p>JavaScript</p>
-      </SkillItem>
-      <SkillItem>
-        <SiJavascript />
-        <p>JavaScript</p>
-      </SkillItem>
-      <SkillItem>
-        <SiJavascript />
-        <p>JavaScript</p>
-      </SkillItem>
-      <SkillItem>
-        <SiJavascript />
-        <p>JavaScript</p>
-      </SkillItem>
-      <SkillItem>
-        <SiJavascript />
-        <p>JavaScript</p>
-      </SkillItem>
-      <SkillItem>
-        <SiJavascript />
-        <p>JavaScript</p>
-      </SkillItem>
+      {skills.map((item) => {
+        return (
+          <SkillItem key={item.name}>
+            <div dangerouslySetInnerHTML={{ __html: item.icon }} />
+            <p>{item.name}</p>
+          </SkillItem>
+        );
+      })}
     </SkillsContainer>
   );
 }

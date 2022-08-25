@@ -6,7 +6,7 @@ export const ProjectItemContainer = styled(Link)`
   height: 14.125rem;
   width: 100%;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   position: relative;
 
   img {
@@ -53,7 +53,7 @@ export const ProjectContent = styled.div`
 
   li {
     background: ${(props) => props.theme.shape[400]};
-    padding: 2px 8px;
+    padding: 0.125rem 0.5rem;
     font-size: 0.875rem;
     border-radius: 999px;
   }

@@ -20,6 +20,7 @@ a {
 
 body {
   background: ${(props) => props.theme.bg};
+  background-image: url("/snow2.png");
   color: ${(props) => props.theme.text};
 }
 
@@ -31,5 +32,6 @@ ul {
 export const BaseContainer = styled.main`
   width: 100%;
   max-width: 47.5rem;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 `;

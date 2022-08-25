@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const SectionSelectorContainer = styled.section`
   background: ${(props) => props.theme.shape[400]};
   padding: 1rem 1.2rem;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 5.625rem;
@@ -11,7 +11,7 @@ export const SectionSelectorContainer = styled.section`
 `;
 
 export const SectionButton = styled.button`
-  border-radius: 10px;
+  border-radius: 0.625rem;
   height: 3.75rem;
   background: transparent;
   border: none;

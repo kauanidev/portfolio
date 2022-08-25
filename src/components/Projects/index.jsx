@@ -1,13 +1,12 @@
 import { ProjectItem } from "../ProjectItem";
 import { ProjectsContainer } from "./styles";
 
-export function Projects() {
+export function Projects({ projects }) {
   return (
     <ProjectsContainer>
-      <ProjectItem />
-      <ProjectItem />
-      <ProjectItem />
-      <ProjectItem />
+      {projects.map((item) => {
+        return <ProjectItem key={item.slug} project={item} />;
+      })}
     </ProjectsContainer>
   );
 }
