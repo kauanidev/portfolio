@@ -5,7 +5,7 @@ export function ProjectImages({ sections }) {
     <ProjectImagesContainer>
       {sections.map((item) => {
         return (
-          <ProjectImagesItem>
+          <ProjectImagesItem key={item.title}>
             <h2>{item.title}</h2>
             <img src={item.image.url} alt={item.title} />
           </ProjectImagesItem>

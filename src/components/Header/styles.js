@@ -13,6 +13,10 @@ export const HeaderContainer = styled.header`
     border-radius: 50%;
     border: 0.3125rem solid ${(props) => props.theme.secondary};
   }
+
+  @media (max-width: 705px) {
+    flex-direction: column;
+  }
 `;
 
 export const PersonalSummary = styled.div`
@@ -25,6 +29,12 @@ export const PersonalSummary = styled.div`
   p {
     font-size: 1.25rem;
     margin-bottom: 1.25rem;
+  }
+
+  @media (max-width: 705px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 

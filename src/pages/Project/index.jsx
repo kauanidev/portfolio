@@ -3,6 +3,7 @@ import { ProjectImages } from "../../components/ProjectImages";
 import { ProjectBanner, ProjectContainer } from "./styles";
 import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
+import { Loading } from "../../components/Loading";
 
 const GET_PROJECT_DATA = gql`
   query GetProjectData($slug: String) {
@@ -32,9 +33,8 @@ export function Project() {
   const { data, loading } = useQuery(GET_PROJECT_DATA, {
     variables: { slug },
   });
-  console.log(data);
 
-  if (loading) return <p>CARREGANDO...</p>;
+  if (loading) return <Loading />;
 
   return (
     <ProjectContainer>

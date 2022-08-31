@@ -12,11 +12,17 @@ export const ProjectHeaderContainer = styled(BaseContainer)`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 
     button,
     a {
       font-size: 1rem;
       padding: 0.625rem 1.25rem;
+    }
+
+    @media (max-width: 370px) {
+      flex-direction: column;
+      justify-content: center;
     }
   }
 
@@ -32,6 +38,7 @@ export const ProjectHeaderContainer = styled(BaseContainer)`
     gap: 1.875rem;
     align-items: center;
     margin-top: 0.625rem;
+    width: 100%;
 
     li,
     a {
@@ -52,6 +59,13 @@ export const ProjectHeaderContainer = styled(BaseContainer)`
       svg {
         opacity: 1;
       }
+    }
+  }
+  @media (max-width: 550px) {
+    text-align: center;
+
+    ul {
+      justify-content: center;
     }
   }
 `;

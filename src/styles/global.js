@@ -20,7 +20,7 @@ a {
 
 body {
   background: ${(props) => props.theme.bg};
-  background-image: url("/snow2.png");
+  background-image: url(${(props) => props.theme.bgImage});
   color: ${(props) => props.theme.text};
 }
 
@@ -34,4 +34,8 @@ export const BaseContainer = styled.main`
   max-width: 47.5rem;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 47.5rem) {
+    padding: 0 1rem;
+  }
 `;

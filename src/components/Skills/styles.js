@@ -6,6 +6,11 @@ export const SkillsContainer = styled.section`
   align-items: center;
   flex-wrap: wrap;
   gap: 4.375rem;
+
+  @media (max-width: 390px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;
 
 export const SkillItem = styled.div`

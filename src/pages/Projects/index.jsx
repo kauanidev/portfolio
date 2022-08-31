@@ -4,6 +4,7 @@ import { useQuery, gql } from "@apollo/client";
 import { Button } from "../../components/Button";
 import { BsArrowBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
+import { Loading } from "../../components/Loading";
 
 const GET_PROJECTS = gql`
   query GetHomeData {
@@ -25,7 +26,7 @@ export function Projects() {
   const navigate = useNavigate();
   const { data, loading } = useQuery(GET_PROJECTS);
 
-  if (loading) return <p>CARREGANDO...</p>;
+  if (loading) return <Loading />;
 
   function handleGoBack() {
     navigate(-1);

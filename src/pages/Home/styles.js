@@ -15,6 +15,10 @@ export const HomeContainer = styled(BaseContainer)`
       font-weight: 500;
     }
   }
+
+  @media (max-width: 705px) {
+    text-align: center;
+  }
 `;
 
 export const ButtonsContainer = styled.section`
@@ -23,4 +27,9 @@ export const ButtonsContainer = styled.section`
   gap: 1.875rem;
   max-width: 39.375rem;
   margin: 0 auto;
+
+  @media (max-width: 705px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;

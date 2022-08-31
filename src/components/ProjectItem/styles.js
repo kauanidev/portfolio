@@ -25,6 +25,12 @@ export const ProjectItemContainer = styled(Link)`
       opacity: 1;
     }
   }
+
+  @media (max-width: 705px) {
+    div {
+      opacity: 1;
+    }
+  }
 `;
 
 export const ProjectContent = styled.div`
@@ -38,6 +44,7 @@ export const ProjectContent = styled.div`
   justify-content: center;
   opacity: 0;
   transition: 0.8s;
+  text-align: center;
 
   h3 {
     font-size: 1.5625rem;
@@ -56,5 +63,9 @@ export const ProjectContent = styled.div`
     padding: 0.125rem 0.5rem;
     font-size: 0.875rem;
     border-radius: 999px;
+  }
+
+  @media (max-width: 705px) {
+    background: ${(props) => rgba(props.theme.secondary, 0.5)};
   }
 `;

@@ -10,6 +10,8 @@ import { gql, useQuery } from "@apollo/client";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { Link } from "react-router-dom";
 import { ContactDialog } from "../../components/ContactDialog";
+import { Loading } from "../../components/Loading";
+import { ThemeToggle } from "../../components/ThemeToggle";
 
 const GET_HOME_DATA = gql`
   query GetHomeData {
@@ -52,10 +54,11 @@ export function Home() {
 
   const { data, loading } = useQuery(GET_HOME_DATA);
 
-  if (loading) return <p>CARREGANDO...</p>;
+  if (loading) return <Loading />;
 
   return (
     <HomeContainer>
+      <ThemeToggle />
       <Header data={data.page} />
       <RichText content={data.page.aboutMe.raw} />
       <ButtonsContainer>
