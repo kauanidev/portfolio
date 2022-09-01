@@ -23,6 +23,7 @@
 * Apollo Client
 * Redux
 * Radix
+* Hygraph
 
 &nbsp;
 
