@@ -17,6 +17,7 @@
 ## 💜 Tecnologias/Ferramentas utilizadas
 
 * React
+* TypeScript
 * Vite
 * Styled Components
 * React Router
