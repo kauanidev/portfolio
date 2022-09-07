@@ -4,6 +4,7 @@ import { ProjectBanner, ProjectContainer } from "./styles";
 import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { Loading } from "../../components/Loading";
+import { IProject } from "../../interfaces/projects.interface";
 
 const GET_PROJECT_DATA = gql`
   query GetProjectData($slug: String) {
@@ -28,13 +29,17 @@ const GET_PROJECT_DATA = gql`
   }
 `;
 
+interface GetProjectDataResponse {
+  project: IProject;
+}
+
 export function Project() {
   const { slug } = useParams();
-  const { data, loading } = useQuery(GET_PROJECT_DATA, {
+  const { data, loading } = useQuery<GetProjectDataResponse>(GET_PROJECT_DATA, {
     variables: { slug },
   });
 
-  if (loading) return <Loading />;
+  if (loading || !data) return <Loading />;
 
   return (
     <ProjectContainer>

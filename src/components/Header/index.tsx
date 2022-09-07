@@ -1,8 +1,19 @@
 import { HeaderContainer, PersonalSummary, SocialsContainer } from "./styles";
-import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
-import { RiWhatsappFill } from "react-icons/ri";
 
-export function Header({ data }) {
+interface HeaderProps {
+  data: {
+    photo: {
+      url: string;
+    };
+    socials: {
+      icon: string;
+      link: string;
+      name: string;
+    }[];
+  };
+}
+
+export function Header({ data }: HeaderProps) {
   return (
     <HeaderContainer>
       <img src={data.photo.url} />

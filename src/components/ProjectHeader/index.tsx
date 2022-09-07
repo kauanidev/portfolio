@@ -3,8 +3,13 @@ import { ProjectHeaderContainer } from "./styles";
 import { BsArrowBarLeft, BsLink45Deg } from "react-icons/bs";
 import { FaGithub, FaCalendarDay } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { IProject } from "../../interfaces/projects.interface";
 
-export function ProjectHeader({ project }) {
+interface ProjectHeaderProps {
+  project: IProject;
+}
+
+export function ProjectHeader({ project }: ProjectHeaderProps) {
   const navigate = useNavigate();
 
   function handleGoBack() {

@@ -1,7 +1,11 @@
 import { SkillItem, SkillsContainer } from "./styles";
-import { SiJavascript } from "react-icons/si";
+import { ITechnology } from "../../interfaces/projects.interface";
 
-export function Skills({ skills }) {
+interface SkillsProps {
+  skills: ITechnology[];
+}
+
+export function Skills({ skills }: SkillsProps) {
   return (
     <SkillsContainer>
       {skills.map((item) => {

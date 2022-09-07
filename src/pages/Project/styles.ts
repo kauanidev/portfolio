@@ -3,7 +3,11 @@ import { rgba } from "polished";
 
 export const ProjectContainer = styled.div``;
 
-export const ProjectBanner = styled.div`
+interface ProjectBannerProps {
+  src: string;
+}
+
+export const ProjectBanner = styled.div<ProjectBannerProps>`
   width: 100%;
   height: 18.75rem;
   background: url(${(props) => props.src}) no-repeat center;

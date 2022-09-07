@@ -1,7 +1,11 @@
 import { lighten } from "polished";
 import styled, { css } from "styled-components";
 
-export const ButtonContainer = styled.button`
+interface ButtonContainerProps {
+  variant: "coral" | "gray";
+}
+
+export const ButtonContainer = styled.button<ButtonContainerProps>`
   padding: 1.25rem 3.125rem;
   border-radius: 0.625rem;
   border: none;

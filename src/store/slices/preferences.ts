@@ -1,13 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+type ThemeKey = "dark" | "light";
+
+interface PreferencesState {
+  currentTheme: ThemeKey;
+}
+
 const THEME_KEY = "kaudev:theme";
-const storagedTheme = localStorage.getItem(THEME_KEY) ?? "dark";
+const storagedTheme = (localStorage.getItem(THEME_KEY) ?? "dark") as ThemeKey;
+
+const initialState: PreferencesState = {
+  currentTheme: storagedTheme,
+};
 
 export const preferencesSlice = createSlice({
   name: "preferences",
-  initialState: {
-    currentTheme: storagedTheme,
-  },
+  initialState,
   reducers: {
     toggleTheme: (state) => {
       const newTheme = state.currentTheme === "dark" ? "light" : "dark";

@@ -10,13 +10,23 @@ import { RiCloseCircleFill } from "react-icons/ri";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 
-export function ContactDialog({ children }) {
-  const { register, handleSubmit, reset } = useForm();
+interface ContactDialogProps {
+  children: ReactNode;
+}
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export function ContactDialog({ children }: ContactDialogProps) {
+  const { register, handleSubmit, reset } = useForm<FormData>();
   const [isLoading, setIsLoading] = useState(false);
 
-  async function handleSendMessage(data) {
+  async function handleSendMessage(data: FormData) {
     try {
       setIsLoading(true);
       const messageData = {

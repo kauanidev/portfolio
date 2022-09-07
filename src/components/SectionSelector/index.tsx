@@ -1,12 +1,12 @@
 import { SectionButton, SectionSelectorContainer } from "./styles";
-import { useSelector, useDispatch } from "react-redux";
 import { setCurrentSection } from "../../store/slices/home";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
 export function SectionSelector() {
-  const currentSection = useSelector((state) => state.home.currentSection);
-  const dispatch = useDispatch();
+  const currentSection = useAppSelector((state) => state.home.currentSection);
+  const dispatch = useAppDispatch();
 
-  function handleSelectSection(section) {
+  function handleSelectSection(section: "portfólio" | "skills") {
     dispatch(setCurrentSection(section));
   }
 

@@ -1,7 +1,12 @@
+import { IProject } from "../../interfaces/projects.interface";
 import { ProjectItem } from "../ProjectItem";
 import { ProjectsContainer } from "./styles";
 
-export function Projects({ projects }) {
+interface ProjectsProps {
+  projects: IProject[];
+}
+
+export function Projects({ projects }: ProjectsProps) {
   return (
     <ProjectsContainer>
       {projects.map((item) => {

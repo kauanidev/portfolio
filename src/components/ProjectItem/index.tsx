@@ -1,6 +1,11 @@
+import { IProject } from "../../interfaces/projects.interface";
 import { ProjectContent, ProjectItemContainer } from "./styles";
 
-export function ProjectItem({ project }) {
+interface ProjectItemProps {
+  project: IProject;
+}
+
+export function ProjectItem({ project }: ProjectItemProps) {
   return (
     <ProjectItemContainer to={`/projects/${project.slug}`}>
       <img src={project.thumbnail.url} />

@@ -4,12 +4,18 @@ import { BaseContainer } from "../../styles/global";
 export const ProjectsContainer = styled(BaseContainer)`
   margin: 3.125rem auto;
 
-  > div {
+  > header {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 0.625rem;
+    justify-content: space-between;
     margin-bottom: 2.5rem;
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.625rem;
+    }
   }
 
   button {

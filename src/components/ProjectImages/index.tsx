@@ -1,6 +1,11 @@
+import { ISection } from "../../interfaces/projects.interface";
 import { ProjectImagesContainer, ProjectImagesItem } from "./styles";
 
-export function ProjectImages({ sections }) {
+interface ProjectImagesProps {
+  sections: ISection[];
+}
+
+export function ProjectImages({ sections }: ProjectImagesProps) {
   return (
     <ProjectImagesContainer>
       {sections.map((item) => {

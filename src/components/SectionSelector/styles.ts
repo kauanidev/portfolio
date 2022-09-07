@@ -10,7 +10,11 @@ export const SectionSelectorContainer = styled.section`
   margin-bottom: 4rem;
 `;
 
-export const SectionButton = styled.button`
+interface SectionButtonProps {
+  isActive: boolean;
+}
+
+export const SectionButton = styled.button<SectionButtonProps>`
   border-radius: 0.625rem;
   height: 3.75rem;
   background: transparent;

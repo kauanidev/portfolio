@@ -5,13 +5,15 @@ import { HiDownload } from "react-icons/hi";
 import { Projects } from "../../components/Projects";
 import { SectionSelector } from "../../components/SectionSelector";
 import { Skills } from "../../components/Skills";
-import { useSelector } from "react-redux";
 import { gql, useQuery } from "@apollo/client";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { Link } from "react-router-dom";
 import { ContactDialog } from "../../components/ContactDialog";
 import { Loading } from "../../components/Loading";
 import { ThemeToggle } from "../../components/ThemeToggle";
+import type { RichTextContent } from "@graphcms/rich-text-types";
+import { IProject, ITechnology } from "../../interfaces/projects.interface";
+import { useAppSelector } from "../../store/hooks";
 
 const GET_HOME_DATA = gql`
   query GetHomeData {
@@ -49,12 +51,33 @@ const GET_HOME_DATA = gql`
   }
 `;
 
+interface GetHomeDataResponse {
+  page: {
+    aboutMe: {
+      raw: RichTextContent;
+    };
+    photo: {
+      url: string;
+    };
+    resume: {
+      url: string;
+    };
+    socials: {
+      icon: string;
+      link: string;
+      name: string;
+    }[];
+    technologies: ITechnology[];
+  };
+  projects: IProject[];
+}
+
 export function Home() {
-  const currentSection = useSelector((state) => state.home.currentSection);
+  const currentSection = useAppSelector((state) => state.home.currentSection);
 
-  const { data, loading } = useQuery(GET_HOME_DATA);
+  const { data, loading } = useQuery<GetHomeDataResponse>(GET_HOME_DATA);
 
-  if (loading) return <Loading />;
+  if (loading || !data) return <Loading />;
 
   return (
     <HomeContainer>
